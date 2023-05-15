@@ -1,0 +1,18 @@
+syntax = "proto3";
+
+package proto;
+
+option go_package ="./"; // 指定RPC文件生成路径地址
+//    protoc --go_out=plugins=grpc:. *.proto
+
+service SearchService {
+  rpc Search(SearchRequest) returns (SearchResponse) {}
+}
+
+message SearchRequest {
+  string request = 1;
+}
+
+message SearchResponse {
+  string response = 1;
+}
